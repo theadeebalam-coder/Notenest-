@@ -1,2 +1,2 @@
 # Notenest-
-NoteNest: A premium stationery delivery app for local essentials."
+NoteNest: A premium stationery delivery app for local essentials.
