@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NoteNest Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body>
+
+<header class="app-header">
+  <span class="brand">Admin Panel</span>
+</header>
+
+<main id="orderList" class="product-list"></main>
+
+<script src="assets/js/store.js"></script>
+<script>
+  const orders = Store.getOrders();
+  const root = document.getElementById("orderList");
+
+  root.innerHTML = orders.map(o => `
+    <div class="card">
+      <strong>Order #${o.id}</strong><br>
+      ${o.items.map(i => `${i.name} – ₹${i.price}`).join("<br>")}
+      <div class="status">${o.status}</div>
+    </div>
+  `).join("");
+</script>
+
+</body>
+</html>
