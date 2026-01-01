@@ -1,0 +1,80 @@
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --accent: #000000;
+  --radius: 18px;
+  --shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-header {
+  padding: 18px 20px;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-badge {
+  background: black;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.product-list {
+  padding: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid black;
+  background: none;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.cart-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 20px;
+  background: white;
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
