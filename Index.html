@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NoteNest | Stationery Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --lux-green: #0c831f; --gold: #e0c097; --dark: #121212; }
+        body { margin: 0; font-family: 'Outfit', sans-serif; background: #f8f8f8; padding-bottom: 90px; }
+        .header { background: #fff; padding: 15px 20px; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .logo { font-weight: 700; font-size: 24px; color: var(--dark); }
+        .logo span { color: var(--lux-green); }
+        .search-bar { background: #f1f2f4; border-radius: 12px; padding: 12px; margin: 10px 20px; display: flex; align-items: center; border: 1px solid #e8e8e8; }
+        .search-bar input { border: none; background: transparent; width: 100%; outline: none; margin-left: 10px; font-size: 14px; }
+        .banner { background: linear-gradient(135deg, #1a1a1a, #3d3d3d); margin: 15px; padding: 30px 20px; border-radius: 20px; color: var(--gold); text-align: center; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 15px; }
+        .card { background: #fff; border-radius: 15px; padding: 12px; border: 1px solid #eee; position: relative; }
+        .card img { width: 100%; height: 110px; object-fit: contain; background: #f9f9f9; border-radius: 10px; }
+        .p-name { font-weight: 600; font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden; }
+        .p-price { font-weight: 700; color: #000; margin-top: 5px; font-size: 16px; }
+        .add-btn { background: #fff; color: var(--lux-green); border: 1px solid var(--lux-green); width: 100%; padding: 8px; border-radius: 10px; font-weight: 700; margin-top: 10px; cursor: pointer; }
+        .cart-strip { position: fixed; bottom: 20px; left: 15px; right: 15px; background: var(--lux-green); color: #fff; padding: 15px 20px; border-radius: 15px; display: none; justify-content: space-between; align-items: center; box-shadow: 0 10px 30px rgba(12,131,31,0.3); z-index: 1000; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Note<span>Nest</span></div>
+    </header>
+    <div class="search-bar">🔍 <input type="text" placeholder='Search "Pens, Notebooks, Art"'></div>
+    <div class="banner"><h2>STATIONERY STORE</h2><p>Delivered in 10 Mins</p></div>
+    <div class="grid">
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/71uV2S-Vf9L._SX522_.jpg" alt="A4 Register">
+            <div class="p-name">Classmate A4 Notebook</div>
+            <div class="p-price">₹70</div>
+            <button class="add-btn" onclick="add()">ADD</button>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/61S4f1kI28L._SX522_.jpg" alt="Pen">
+            <div class="p-name">Parker Ball Pen</div>
+            <div class="p-price">₹100</div>
+            <button class="add-btn" onclick="add()">ADD</button>
+        </div>
+    </div>
+    <div id="cart-strip" class="cart-strip">
+        <div><div id="count">1 Item</div><div id="total" style="font-weight:700">₹70</div></div>
+        <div style="font-weight:700">VIEW CART ❯</div>
+    </div>
+    <script>
+        let items = 0; let price = 0;
+        function add() {
+            items++; price += 70;
+            document.getElementById('cart-strip').style.display = 'flex';
+            document.getElementById('count').innerText = items + " Items";
+            document.getElementById('total').innerText = "₹" + price;
+        }
+    </script>
+</body>
+</html>
